@@ -125,7 +125,7 @@ while($row = mysqli_fetch_array($result))
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                    <img src="capital.png" style="width: 70px; height: 70px;">
+                                    <img src="assets/images/icons/capital.png" style="width: 70px; height: 70px;">
                                         </div>
 
                                         <div class="widget-detail-1 text-right">
@@ -172,7 +172,7 @@ $total = $row[0];
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                        <img src="profit-loss.png" style="width: 70px; height: 70px;">
+                                        <img src="assets/images/icons/profit-loss.png" style="width: 70px; height: 70px;">
                                         </div>
 
                                         <div class="widget-detail-1 text-right">
@@ -249,7 +249,7 @@ else
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                            <img src="expense.png" style="width: 70px; height: 70px;">
+                                            <img src="assets/images/icons/expense.png" style="width: 70px; height: 70px;">
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1">  <?php
@@ -278,7 +278,7 @@ $item= $row['cash_name'];
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                           <img src="sales.png" style="width: 70px; height: 70px;">
+                                           <img src="assets/images/icons/sales.png" style="width: 70px; height: 70px;">
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1">  <?php
@@ -310,7 +310,7 @@ $total = $row[0];
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                    <img src="money-total.png" style="width: 70px; height: 70px;">
+                                    <img src="assets/images/icons/money-total.png" style="width: 70px; height: 70px;">
                                         </div>
 
                                         <div class="widget-detail-1 text-right">
@@ -365,7 +365,7 @@ $cash= $see*$link_cash;
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                        <img src="money-pending.png" style="width: 70px; height: 70px;">
+                                        <img src="assets/images/icons/money-pending.png" style="width: 70px; height: 70px;">
                                         </div>
 
                                         <div class="widget-detail-1 text-right">
@@ -396,7 +396,7 @@ $total = $row[0];
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                            <img src="money-received.png" style="width: 70px; height: 70px;">
+                                            <img src="assets/images/icons/money-received.png" style="width: 70px; height: 70px;">
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
@@ -424,7 +424,7 @@ $total = $row[0];
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                           <img src="money-available.png" style="width: 70px; height: 70px;">
+                                           <img src="assets/images/icons/money-available.png" style="width: 70px; height: 70px;">
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
@@ -473,7 +473,7 @@ else
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                    <img src="applicant.png" style="width: 70px; height: 70px;">
+                                    <img src="assets/images/icons/applicant.png" style="width: 70px; height: 70px;">
                                         </div>
 
                                         <div class="widget-detail-1 text-right">
@@ -519,7 +519,7 @@ else
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                    <img src="enter.png" style="width: 70px; height: 70px;">
+                                    <img src="assets/images/icons/enter.png" style="width: 70px; height: 70px;">
                                         </div>
 
                                         <div class="widget-detail-1 text-right">
@@ -565,7 +565,7 @@ else
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                    <img src="signal.png" style="width: 70px; height: 70px;">
+                                    <img src="assets/images/icons/signal.png" style="width: 70px; height: 70px;">
                                         </div>
 
                                         <div class="widget-detail-1 text-right">
@@ -608,7 +608,7 @@ else
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                            <img src="log-in.png" style="width: 70px; height: 70px;">
+                                            <img src="assets/images/icons/log-in.png" style="width: 70px; height: 70px;">
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1">    <?php
@@ -648,7 +648,7 @@ echo"$tracked_topic";}
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                    <img src="resume.png" style="width: 70px; height: 70px;">
+                                    <img src="assets/images/icons/resume.png" style="width: 70px; height: 70px;">
                                         </div>
 
                                         <div class="widget-detail-1 text-right">
@@ -694,7 +694,7 @@ else
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                    <img src="approved.png" style="width: 70px; height: 70px;">
+                                    <img src="assets/images/icons/approved.png" style="width: 70px; height: 70px;">
                                         </div>
 
                                         <div class="widget-detail-1 text-right">
@@ -733,7 +733,7 @@ echo"$see";
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                    <img src="rejected.png" style="width: 70px; height: 70px;">
+                                    <img src="assets/images/icons/rejected.png" style="width: 70px; height: 70px;">
                                         </div>
 
                                         <div class="widget-detail-1 text-right">
@@ -770,7 +770,7 @@ echo"$see";
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                            <img src="resume_latest.png" style="width: 70px; height: 70px;">
+                                            <img src="assets/images/icons/resume_latest.png" style="width: 70px; height: 70px;">
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1">    <?php
@@ -807,7 +807,7 @@ echo"$tracked_topic";}
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                            <img src="support.png" style="width: 70px; height: 70px;">
+                                            <img src="assets/images/icons/support.png" style="width: 70px; height: 70px;">
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
@@ -851,7 +851,7 @@ echo
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                            <img src="paper.png" style="width: 70px; height: 70px;">
+                                            <img src="assets/images/icons/paper.png" style="width: 70px; height: 70px;">
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
@@ -892,7 +892,7 @@ echo
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                            <img src="internet.png" style="width: 70px; height: 70px;">
+                                            <img src="assets/images/icons/internet.png" style="width: 70px; height: 70px;">
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
@@ -943,7 +943,7 @@ echo
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                            <img src="live.png" style="width: 70px; height: 70px;">
+                                            <img src="assets/images/icons/live.png" style="width: 70px; height: 70px;">
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
@@ -988,7 +988,7 @@ echo
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                            <img src="phone.png" style="width: 70px; height: 70px;">
+                                            <img src="assets/images/icons/phone.png" style="width: 70px; height: 70px;">
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1">  <?php
@@ -1029,7 +1029,7 @@ echo
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                            <img src="click.png" style="width: 70px; height: 70px;">
+                                            <img src="assets/images/icons/click.png" style="width: 70px; height: 70px;">
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
@@ -1096,7 +1096,7 @@ echo
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                            <img src="total-clicks.png" style="width: 70px; height: 70px;">
+                                            <img src="assets/images/icons/total-clicks.png" style="width: 70px; height: 70px;">
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
@@ -1124,7 +1124,7 @@ echo " <span style='color:green;'> $total</span>";
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                            <img src="yesterday-clicks.png" style="width: 70px; height: 70px;">
+                                            <img src="assets/images/icons/yesterday-clicks.png" style="width: 70px; height: 70px;">
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
@@ -1173,7 +1173,7 @@ else
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                           <img src="today-clicks.png" style="width: 70px; height: 70px;">
+                                           <img src="assets/images/icons/today-clicks.png" style="width: 70px; height: 70px;">
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
@@ -1219,7 +1219,7 @@ echo number_format((float)$see, 2, '.', '') ;echo"%";
 
                                     <div class="widget-chart-1">
                                         <div class="widget-chart-box-1 float-left" dir="ltr">
-                                            <img src="feature.png" style="width: 70px; height: 70px;">
+                                            <img src="assets/images/icons/feature.png" style="width: 70px; height: 70px;">
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php

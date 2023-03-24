@@ -1,7 +1,7 @@
 <?php
 // Initialize the session
 session_start();
- require 'throughpass.php';
+ require_once 'admin/config.php';
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: admin/logout.php");
@@ -10,7 +10,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 
 $str=$_SESSION["username"];
-$result = mysqli_query($con,"SELECT * FROM users where username='$str' ");
+$result = mysqli_query($link,"SELECT * FROM users where username='$str' ");
  $queryResult = mysqli_num_rows($result);
   if ($queryResult > 0) {
 while($row = mysqli_fetch_array($result)) 
@@ -133,7 +133,7 @@ while($row = mysqli_fetch_array($result))
                                             
                                             
                                             <?php
-                        include'throughpass.php'; 
+                        
 
 
 
@@ -144,7 +144,7 @@ while($row = mysqli_fetch_array($result))
                                           
 
 $s= "SELECT sum(cash_amount), cash_name FROM the_bank where cash_category ='capital'   ";
-$results=mysqli_query($Cser,$s);
+$results=mysqli_query($link,$s);
 $row = mysqli_fetch_array($results);
 $total = $row[0];
 
@@ -178,17 +178,17 @@ $total = $row[0];
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> Ksh
              <?php
-                    include'throughpass.php'; 
+                    
                         
                         
 $s1= "SELECT sum(cash_amount) FROM the_bank where cash_category ='capital'   ";
-$results1=mysqli_query($Cser,$s1);
+$results1=mysqli_query($link,$s1);
 $row1 = mysqli_fetch_array($results1);
 $total1 = $row1[0];                        
 
 
 $s2= "SELECT sum(cash_amount) FROM the_bank where cash_category ='sale'   ";
-$results2=mysqli_query($Cser,$s2);
+$results2=mysqli_query($link,$s2);
 $row2 = mysqli_fetch_array($results2);
 $total2 = $row2[0];
 
@@ -196,7 +196,7 @@ $total2 = $row2[0];
 
 
 $s= "SELECT sum(cash_amount) FROM the_bank where cash_category ='expenditure'   ";
-$results=mysqli_query($Cser,$s);
+$results=mysqli_query($link,$s);
 $row = mysqli_fetch_array($results);
 $total = $row[0];
 
@@ -253,11 +253,11 @@ else
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1">  <?php
-                        include'throughpass.php'; 
+                        
 
 $bf=$_SESSION['username'];
 $s= "SELECT sum(cash_amount), cash_name FROM the_bank where cash_category ='expenditure'   ORDER BY id DESC LIMIT 1";
-$results=mysqli_query($Cser,$s);
+$results=mysqli_query($link,$s);
 $row = mysqli_fetch_array($results);
 $total = $row[0];
 $item= $row['cash_name'];
@@ -282,11 +282,11 @@ $item= $row['cash_name'];
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1">  <?php
-                        include'throughpass.php'; 
+                        
 
 $bf=$_SESSION['username'];
 $s= "SELECT sum(cash_amount), cash_name FROM the_bank where cash_category ='sale'  ";
-$results=mysqli_query($Cser,$s);
+$results=mysqli_query($link,$s);
 $row = mysqli_fetch_array($results);
 $total = $row[0];
 
@@ -315,10 +315,10 @@ $total = $row[0];
 
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
-                        include'throughpass.php'; 
+                        
  
 
-$result = mysqli_query($Cser,"SELECT COUNT(clicks), link_cash
+$result = mysqli_query($link,"SELECT COUNT(clicks), link_cash
 FROM thenumbers 
 group by link_cash ORDER BY COUNT(clicks) LIMIT 1; "); 
 while($row = mysqli_fetch_array($result)) 
@@ -334,7 +334,7 @@ while($row = mysqli_fetch_array($result))
 $s= "SELECT COUNT(DISTINCT ip_str)
 FROM thenumbers WHERE benefit_name !='' and tracked_country !='' 
 ";
-$results=mysqli_query($Cser,$s);
+$results=mysqli_query($link,$s);
 $row = mysqli_fetch_array($results);
 $total = $row[0];
 
@@ -370,11 +370,11 @@ $cash= $see*$link_cash;
 
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
-                        include'throughpass.php'; 
+                        
 
 $bf=$_SESSION['username'];
 $s= "SELECT sum(away_team1) FROM premium_daily_list_matches where home_team1 !='' and claim ='1'   ";
-$results=mysqli_query($Cser,$s);
+$results=mysqli_query($link,$s);
 $row = mysqli_fetch_array($results);
 $total = $row[0];
   echo" Ksh $total  ";
@@ -400,11 +400,11 @@ $total = $row[0];
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
-                        include'throughpass.php'; 
+                        
 
 $bf=$_SESSION['username'];
 $s= "SELECT sum(away_team1) FROM premium_daily_list_matches where home_team1 !='' and claim ='2'   ";
-$results=mysqli_query($Cser,$s);
+$results=mysqli_query($link,$s);
 $row = mysqli_fetch_array($results);
 $total = $row[0];
   echo" <span style='color:green; '>Ksh  $total </span> ";
@@ -428,12 +428,12 @@ $total = $row[0];
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
-                        include'throughpass.php'; 
+                        
 
 $stamper=date("Y-m-d");
                                   
 $s= "SELECT count(home_team1) FROM premium_daily_list_matches where claim='1' ";
-$results=mysqli_query($Cser,$s);
+$results=mysqli_query($link,$s);
 $row = mysqli_fetch_array($results);
 $total = $row[0];
 
@@ -478,12 +478,12 @@ else
 
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
-                        include'throughpass.php'; 
+                        
 
 $stamper=date("Y-m-d");
                                   
 $s= "SELECT count(username) FROM applicants";
-$results=mysqli_query($Cser,$s);
+$results=mysqli_query($link,$s);
 $row = mysqli_fetch_array($results);
 $total = $row[0];
 
@@ -524,12 +524,12 @@ else
 
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
-                        include'throughpass.php'; 
+                        
 
 $stamper=date("Y-m-d");
                                   
 $s= "SELECT count(app_no) FROM applicants where stat='1'";
-$results=mysqli_query($Cser,$s);
+$results=mysqli_query($link,$s);
 $row = mysqli_fetch_array($results);
 $total = $row[0];
 
@@ -570,12 +570,12 @@ else
 
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
-                        include'throughpass.php'; 
+                        
 
 $stamper=date("Y-m-d");
                                   
 $s= "SELECT count(app_no) FROM applicants where stat='0'";
-$results=mysqli_query($Cser,$s);
+$results=mysqli_query($link,$s);
 $row = mysqli_fetch_array($results);
 $total = $row[0];
 
@@ -612,9 +612,9 @@ else
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1">    <?php
- include'throughpass.php';     
+     
  $bf=$_SESSION["username"];
-$result = mysqli_query($Cser,"SELECT * FROM applicants ORDER BY id desc limit 1 "); 
+$result = mysqli_query($link,"SELECT * FROM applicants ORDER BY id desc limit 1 "); 
 while($row = mysqli_fetch_array($result)) 
 
 {
@@ -653,12 +653,12 @@ echo"$tracked_topic";}
 
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
-                        include'throughpass.php'; 
+                        
 
 $stamper=date("Y-m-d");
                                   
 $s= "SELECT count(id) FROM applicant_answer";
-$results=mysqli_query($Cser,$s);
+$results=mysqli_query($link,$s);
 $row = mysqli_fetch_array($results);
 $total = $row[0];
 
@@ -699,12 +699,12 @@ else
 
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
-                        include'throughpass.php'; 
+                        
 
 $stamper=date("Y-m-d");
                                   
 $s= "SELECT count(application_id) FROM applicant_answer where stat='Approved'";
-$results=mysqli_query($Cser,$s);
+$results=mysqli_query($link,$s);
 $row = mysqli_fetch_array($results);
 $total = $row[0];
 
@@ -738,12 +738,12 @@ echo"$see";
 
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
-                        include'throughpass.php'; 
+                        
 
 $stamper=date("Y-m-d");
                                   
 $s= "SELECT count(application_id) FROM applicant_answer where stat='Rejected'";
-$results=mysqli_query($Cser,$s);
+$results=mysqli_query($link,$s);
 $row = mysqli_fetch_array($results);
 $total = $row[0];
 
@@ -774,9 +774,9 @@ echo"$see";
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1">    <?php
- include'throughpass.php';     
+     
  $bf=$_SESSION["username"];
-$result = mysqli_query($Cser,"SELECT * FROM applicant_answer  ORDER BY id desc limit 1 "); 
+$result = mysqli_query($link,"SELECT * FROM applicant_answer  ORDER BY id desc limit 1 "); 
 while($row = mysqli_fetch_array($result)) 
 
 {
@@ -811,10 +811,10 @@ echo"$tracked_topic";}
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
- include'throughpass.php';     
+     
  
  
-$result = mysqli_query($con,"SELECT COUNT(clicks), tracked_topic
+$result = mysqli_query($link,"SELECT COUNT(clicks), tracked_topic
 FROM thenumbers where section='web-pages' and tracked_country !=''
 group by tracked_topic
 ORDER BY COUNT(clicks) DESC limit 1; "); 
@@ -855,10 +855,10 @@ echo
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
- include'throughpass.php';     
+     
  
  
-$result = mysqli_query($con,"SELECT COUNT(clicks), tracked_topic
+$result = mysqli_query($link,"SELECT COUNT(clicks), tracked_topic
 FROM thenumbers where section='blog' and tracked_country !=''
 group by tracked_topic
 ORDER BY COUNT(clicks) DESC limit 1; "); 
@@ -896,10 +896,10 @@ echo
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
- include'throughpass.php';     
+     
  
  
-$result = mysqli_query($con,"SELECT COUNT(clicks), tracked_topic
+$result = mysqli_query($link,"SELECT COUNT(clicks), tracked_topic
 FROM thenumbers where section='case-study' and tracked_country !=''
 group by tracked_topic
 ORDER BY COUNT(clicks) DESC limit 1; "); 
@@ -947,10 +947,10 @@ echo
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
- include'throughpass.php';     
+     
  
  
-$result = mysqli_query($con,"SELECT COUNT(clicks), tracked_country
+$result = mysqli_query($link,"SELECT COUNT(clicks), tracked_country
 FROM thenumbers where tracked_location !=''
 group by tracked_country
 ORDER BY COUNT(clicks) DESC limit 1; "); 
@@ -992,10 +992,10 @@ echo
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1">  <?php
- include'throughpass.php';     
+     
  
  
-$result = mysqli_query($con,"SELECT COUNT(clicks), tracked_topic
+$result = mysqli_query($link,"SELECT COUNT(clicks), tracked_topic
 FROM thenumbers where section='services' and tracked_country !=''
 group by tracked_topic
 ORDER BY COUNT(clicks) DESC limit 1; "); 
@@ -1033,10 +1033,10 @@ echo
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
- include'throughpass.php';     
+     
  
  
-$result = mysqli_query($con,"SELECT COUNT(clicks), tracked_topic
+$result = mysqli_query($link,"SELECT COUNT(clicks), tracked_topic
 FROM thenumbers where section='rate-card' and tracked_country !=''
 group by tracked_topic
 ORDER BY COUNT(clicks) DESC limit 1; "); 
@@ -1100,12 +1100,12 @@ echo
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
-                        include'throughpass.php'; 
+                        
 
 
 $yesterday=date("Y-m-d", time() - 86400);                       
 $s= "SELECT sum(clicks) FROM thenumbers where stamper_2='$yesterday' AND tracked_country!='' ";
-$results=mysqli_query($Cser,$s);
+$results=mysqli_query($link,$s);
 $row = mysqli_fetch_array($results);
 $total = $row[0];
 echo " <span style='color:green;'> $total</span>";
@@ -1128,12 +1128,12 @@ echo " <span style='color:green;'> $total</span>";
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
-                        include'throughpass.php'; 
+                        
 
 $stamper=date("Y-m-d");
                                   
 $s= "SELECT sum(clicks) FROM thenumbers where stamper_2='$stamper' and tracked_country !='' ";
-$results=mysqli_query($Cser,$s);
+$results=mysqli_query($link,$s);
 $row = mysqli_fetch_array($results);
 $total = $row[0];
 
@@ -1141,7 +1141,7 @@ $total = $row[0];
 $stamper2=date("Y-m-d", time() - 86400);
                                      
 $s2= "SELECT sum(clicks) FROM thenumbers where stamper_2='$stamper2' and tracked_country !='' ";
-$results=mysqli_query($Cser,$s2);
+$results=mysqli_query($link,$s2);
 $row2 = mysqli_fetch_array($results);
 $total2 = $row2[0];
 
@@ -1177,18 +1177,18 @@ else
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
-                        include'throughpass.php'; 
+                        
 
 $stamper=date("Y-m-d", time() - 86400);
                                      
 $s= "SELECT sum(clicks) FROM thenumbers where stamper_2='$stamper' and tracked_country !=''";
-$results=mysqli_query($Cser,$s);
+$results=mysqli_query($link,$s);
 $row = mysqli_fetch_array($results);
 $total2 = $row[0];
 
 $yesterday=date("Y-m-d", time() - 172800);                       
 $s1= "SELECT sum(clicks) FROM thenumbers where stamper_2='$yesterday' and tracked_country !='' ";
-$results1=mysqli_query($Cser,$s1);
+$results1=mysqli_query($link,$s1);
 $row1 = mysqli_fetch_array($results1);
 $total1 = $row1[0];
 
@@ -1223,18 +1223,18 @@ echo number_format((float)$see, 2, '.', '') ;echo"%";
                                         </div>
                                         <div class="widget-detail-1 text-right">
                                             <h2 class="font-weight-normal pt-2 mb-1"> <?php
-                        include'throughpass.php'; 
+                        
 
 $stamper=date("Y-m-d");
                                      
 $s= "SELECT sum(clicks) FROM thenumbers where stamper_2='$stamper' and tracked_country !='' ";
-$results=mysqli_query($Cser,$s);
+$results=mysqli_query($link,$s);
 $row = mysqli_fetch_array($results);
 $total2 = $row[0];
 
 $yesterday=date("Y-m-d", time() - 86400);                       
 $s1= "SELECT sum(clicks) FROM thenumbers where stamper_2='$yesterday' and tracked_country !=''";
-$results1=mysqli_query($Cser,$s1);
+$results1=mysqli_query($link,$s1);
 $row1 = mysqli_fetch_array($results1);
 $total1 = $row1[0];
 
@@ -1273,9 +1273,9 @@ echo number_format((float)$see, 2, '.', '') ;echo"%";
                          <div class="row">
                              
                               <?php
- include'throughpass.php';     
+     
  $bf=$_SESSION["username"];
-$result = mysqli_query($Cser,"SELECT * FROM thenumbers where tracked_country !='' ORDER BY id desc limit 4 "); 
+$result = mysqli_query($link,"SELECT * FROM thenumbers where tracked_country !='' ORDER BY id desc limit 4 "); 
 while($row = mysqli_fetch_array($result)) 
 
 {
@@ -1342,9 +1342,9 @@ echo"
                                         
                                         
                                                                             <?php
-                                                                            include'throughpass.php';     
+                                                                                
                                                                                $stamper=date("Y-m-d");
-                                        $result1 = mysqli_query($Cser,"SELECT COUNT(clicks), link_cash
+                                        $result1 = mysqli_query($link,"SELECT COUNT(clicks), link_cash
 FROM thenumbers 
 group by link_cash
 ORDER BY COUNT(clicks) DESC limit 1; "); 
@@ -1353,7 +1353,7 @@ while($row1 = mysqli_fetch_array($result1))
 {
  $link_cash=$row1['link_cash'];         
  
- $result = mysqli_query($con,"SELECT COUNT(DISTINCT ip_str), benefit_name, link_cash
+ $result = mysqli_query($link,"SELECT COUNT(DISTINCT ip_str), benefit_name, link_cash
                                                                             FROM thenumbers where benefit_name !='' and stamper_2='$stamper' and tracked_country !=''
                                                                             GROUP BY benefit_name, link_cash  ORDER BY COUNT(DISTINCT ip_str) desc limit 10; "); 
                                                                             while($row = mysqli_fetch_array($result)) 
@@ -1366,7 +1366,7 @@ while($row1 = mysqli_fetch_array($result1))
 
              
                              $sql2 = "SELECT * FROM tbl_images where uname='$section'";
-	$result2 = mysqli_query($con, $sql2);
+	$result2 = mysqli_query($link, $sql2);
 	 while($row = mysqli_fetch_array($result2))  
                 {  
 	$bla=$row['name'];
@@ -1437,9 +1437,9 @@ while($row1 = mysqli_fetch_array($result1))
                                             </thead>
                                             <tbody>
                                                 <?php
- include'throughpass.php';     
+     
  $bf=$_SESSION["username"];
-$result = mysqli_query($Cser,"SELECT * FROM thenumbers where tracked_location !='' ORDER BY id desc limit 10 "); 
+$result = mysqli_query($link,"SELECT * FROM thenumbers where tracked_location !='' ORDER BY id desc limit 10 "); 
 while($row = mysqli_fetch_array($result)) 
 
 {
@@ -1538,11 +1538,11 @@ echo"
                                             </thead>
                                             <tbody>
                                                <?php
- include'throughpass.php';     
+     
  
  $stamper_2=date("Y-m-d");
  
-$result = mysqli_query($con,"SELECT COUNT(clicks), tracked_country
+$result = mysqli_query($link,"SELECT COUNT(clicks), tracked_country
 FROM thenumbers where tracked_country !='' and stamper_2='$stamper_2'
 group by tracked_country
 ORDER BY COUNT(clicks) DESC limit 10; "); 
@@ -1627,10 +1627,10 @@ echo"
                                             </thead>
                                             <tbody>
                                                <?php
- include'throughpass.php';     
+     
  $stamper_2=date("Y-m-d");
  
-$result = mysqli_query($con,"SELECT COUNT(clicks), tracked_topic
+$result = mysqli_query($link,"SELECT COUNT(clicks), tracked_topic
 FROM thenumbers WHERE section='web-pages' AND stamper_2='$stamper_2' and tracked_country !=''
 group by tracked_topic
 ORDER BY COUNT(clicks) DESC limit 10; "); 
@@ -1717,11 +1717,11 @@ echo"
                                             </thead>
                                             <tbody>
                                                <?php
- include'throughpass.php';     
+     
  
  $stamper_2=date("Y-m-d");
  
-$result = mysqli_query($con,"SELECT COUNT(clicks), tracked_topic
+$result = mysqli_query($link,"SELECT COUNT(clicks), tracked_topic
 FROM thenumbers WHERE section='case-study' AND stamper_2='$stamper_2'  and tracked_country !=''
 group by tracked_topic
 ORDER BY COUNT(clicks) DESC limit 10; "); 
@@ -1813,11 +1813,11 @@ echo"
                                             </thead>
                                             <tbody>
                                               <?php
- include'throughpass.php';     
+     
  
  $stamper_2=date("Y-m-d");
  
-$result = mysqli_query($con,"SELECT COUNT(clicks), tracked_topic
+$result = mysqli_query($link,"SELECT COUNT(clicks), tracked_topic
 FROM thenumbers WHERE section='rate-card' AND stamper_2='$stamper_2' and tracked_country !=''
 group by tracked_topic
 ORDER BY COUNT(clicks) DESC limit 10; "); 
@@ -1905,11 +1905,11 @@ echo"
                                             </thead>
                                             <tbody>
                                                <?php
- include'throughpass.php';     
+     
  
  $stamper_2=date("Y-m-d");
  
-$result = mysqli_query($con,"SELECT COUNT(clicks), tracked_topic
+$result = mysqli_query($link,"SELECT COUNT(clicks), tracked_topic
 FROM thenumbers WHERE section='services' AND stamper_2='$stamper_2' and tracked_country !=''
 group by tracked_topic
 ORDER BY COUNT(clicks) DESC limit 10; "); 
@@ -1994,11 +1994,11 @@ echo"
                                             </thead>
                                             <tbody>
                                                <?php
- include'throughpass.php';     
+     
  
  $stamper_2=date("Y-m-d");
  
-$result = mysqli_query($con,"SELECT COUNT(clicks), tracked_topic
+$result = mysqli_query($link,"SELECT COUNT(clicks), tracked_topic
 FROM thenumbers WHERE section='affiliate' AND stamper_2='$stamper_2' and tracked_country !=''
 group by tracked_topic
 ORDER BY COUNT(clicks) DESC limit 10; "); 
@@ -2091,11 +2091,11 @@ echo"
                                             </thead>
                                             <tbody>
                                                <?php
- include'throughpass.php';     
+     
 
  $stamper_2=date("Y-m-d");
  
-$result = mysqli_query($con,"SELECT COUNT(clicks), tracked_topic
+$result = mysqli_query($link,"SELECT COUNT(clicks), tracked_topic
 FROM thenumbers WHERE section='blog' AND stamper_2='$stamper_2' and tracked_country !=''
 group by tracked_topic
 ORDER BY COUNT(clicks) DESC limit 10; "); 
@@ -2178,11 +2178,11 @@ echo"
                                             </thead>
                                             <tbody>
                                                <?php
- include'throughpass.php';     
+     
 
  $stamper_2=date("Y-m-d");
  
-$result = mysqli_query($con,"SELECT COUNT(clicks), tracked_topic
+$result = mysqli_query($link,"SELECT COUNT(clicks), tracked_topic
 FROM thenumbers WHERE section='clicks' AND stamper_2='$stamper_2' and tracked_country !=''
 group by tracked_topic
 ORDER BY COUNT(clicks) DESC limit 10; "); 

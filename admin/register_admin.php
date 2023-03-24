@@ -145,7 +145,7 @@ $str=to_prety_url($topic);
     
 <head>
         <meta charset="utf-8" />
-        <title>Register | Eazzzy Digital Admin</title>
+        <title>Register | Admin Panel</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Bora Designs affiliate program, earn cash from your followers. " name="description" />
         <meta content="Bora Designs" name="author" />
@@ -177,7 +177,7 @@ $color=$row['last_name'];
 $date=$row['first_name'];
 $font=$row['font'];
 
-$url='https://eazzzydigital.com/wazito/upload/';
+$url='/wazito/upload/';
 
 $bg1=$url.$bg;
 
@@ -194,7 +194,7 @@ $bg1=$url.$bg;
 
                             <div class="card-body p-4">
                                 <div class="text-center">
-                            <a href="https://boradesigns.co.ke" class="logo">
+                            <a href="javascript:void(0)" class="logo">
                                 <img src="../assets/images/logo-light.png" alt="" height="44" class="logo-light mx-auto">
                                <img src="../assets/images/logo-dark.png" alt="" height="44" class="logo-dark mx-auto">
                             </a>
@@ -203,7 +203,7 @@ $bg1=$url.$bg;
                         </div><br>
                         
                                 <div class="text-center mb-4">
-                                    <h4 class="text-uppercase mt-0">Eazzzy Digital Admin<br>Sign Up</h4>
+                                    <h4 class="text-uppercase mt-0"> Admin Portal<br>Sign Up</h4>
                                 </div>
 
                                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -240,7 +240,7 @@ $bg1=$url.$bg;
                         <div class="row mt-3">
                             <div class="col-12 text-center">
                                 
-                                <p class="text-muted" style="color: <?php echo"$font;"?>">Have an account? <a href="https://eazzzydigital.com/wazito/admin/login.php" class="text-dark ml-1" style="color: <?php echo"$font;"?>"><b style="color: <?php echo"$font;"?>" >Log In</b></a></p>
+                                <p class="text-muted" style="color: <?php echo"$font;"?>">Have an account? <a href="login.php" class="text-dark ml-1" style="color: <?php echo"$font;"?>"><b style="color: <?php echo"$font;"?>" >Log In</b></a></p>
                             </div> <!-- end col -->
                         </div>  <?php }} ?>
                         <!-- end row -->

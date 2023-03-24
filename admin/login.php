@@ -4,7 +4,7 @@ session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-  header("location:../entry4.php");
+  header("location:../home.php");
   exit;
 }
  
@@ -64,7 +64,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;                            
                             
                             // Redirect user to welcome page
-                            header("location: ../entry4.php");
+                            header("location: ../home.php");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";
@@ -93,7 +93,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
 <head>
         <meta charset="utf-8" />
-        <title>Log in | Eazzzy Digital Admin Panel</title>
+        <title>Log in | Admin Panel</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Bora Designs affiliate program, earn cash from your followers. " name="description" />
         <meta content="Bora Designs" name="author" />
@@ -152,7 +152,7 @@ $bg1=$url.$bg;
                         </div><br>
                         
                                 <div class="text-center mb-4">
-                                    <h4 class="text-uppercase mt-0">Eazzzy Digital Admin<br>Sign In</h4>
+                                    <h4 class="text-uppercase mt-0">Admin Portal<br>Sign In</h4>
                                 </div>
 
                                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">

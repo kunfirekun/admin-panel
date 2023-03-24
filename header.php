@@ -4,7 +4,7 @@
  include 'throughpass.php';
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: logout.php");
+    header("location: admin/logout.php");
     exit;
 }?>
  <header id='topnav'>
@@ -71,7 +71,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
                         <!-- LOGO -->
                         <div class='logo-box'>
-                            <a href='entry4.php' class='logo logo-light'>
+                            <a href='home.php' class='logo logo-light'>
                                 <span class='logo-lg'>
                                     <img src='assets/images/logo-light.png' alt='' height='44'>
                                 </span>
@@ -79,7 +79,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                     <img src='assets/images/logo-sm.png' alt='' height='44'>
                                 </span>
                             </a>
-                            <a href='entry4.php' class='logo logo-dark'>
+                            <a href='home.php' class='logo logo-dark'>
                                 <span class='logo-lg'>
                                     <img src='assets/images/logo-dark.png' alt='' height='44'>
                                 </span>
@@ -101,7 +101,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             <ul class='navigation-menu'>
 
                                 <li class='has-submenu'>
-                                    <a href='entry4.php'><i class='mdi mdi-view-dashboard'></i>Dashboard </a> 
+                                    <a href='home.php'><i class='mdi mdi-view-dashboard'></i>Dashboard </a> 
                                 </li>
 
                                <li class='has-submenu'>

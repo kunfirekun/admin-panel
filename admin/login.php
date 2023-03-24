@@ -99,7 +99,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <meta content="Bora Designs" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="../assets/images/favicon.ico">
+        <link rel="shortcut icon" href="../assets/images/fav.ico">
 
         <!-- Bootstrap Css -->
         <link href="../assets/css/bootstrap.min.css" id="bootstrap-stylesheet" rel="stylesheet" type="text/css" />

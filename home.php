@@ -75,7 +75,7 @@ while($row = mysqli_fetch_array($result))
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                                    <h4 class="page-title"><a href="entry4.php"><i class="mdi mdi-view-dashboard"></i> Data View </a> / <a href="entry5.php"><i class="mdi mdi-eye"></i> Graphic View</a></h4>
+                                    <h4 class="page-title"><a href="home.php"><i class="mdi mdi-view-dashboard"></i> Data View </a> / <a href="entry5.php"><i class="mdi mdi-eye"></i> Graphic View</a></h4>
 
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">

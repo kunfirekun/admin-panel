@@ -9,17 +9,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 
 
-$str=$_SESSION["username"];
-$result = mysqli_query($link,"SELECT * FROM users where username='$str' ");
- $queryResult = mysqli_num_rows($result);
-  if ($queryResult > 0) {
-while($row = mysqli_fetch_array($result)) 
-{ 
-    //$url=$row['link'];
-//$yo=$row['jargon'];
-
-//$link = $url.$yo;
-}}
 
 ?>
 <!DOCTYPE html>
